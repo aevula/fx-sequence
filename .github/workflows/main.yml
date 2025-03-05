@@ -1,0 +1,26 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint
+    env:
+      BUNDLE_WITH: lint
+      BUNDLE_WITHOUT: development test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Ruby 3.0
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+          bundler-cache: true
+
+      - name: Rubocop
+        run: bundle exec rubocop --format progress

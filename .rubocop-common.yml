@@ -1,0 +1,84 @@
+plugins:
+  - rubocop-performance
+  - rubocop-rake
+
+AllCops:
+  Exclude:
+    - '/**/db/schema.rb'
+    - '/**/script/**/*'
+    - '/**/bin/**/*'
+    - '/**/tmp/**/*'
+  EnabledByDefault: true
+  NewCops: enable
+
+########## Bundler ##########
+
+Bundler/GemComment:
+  Enabled: false
+
+Bundler/GemVersion:
+  Enabled: false
+
+Gemspec/DependencyVersion:
+  Enabled: false
+
+########## Layout ###########
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/FirstHashElementLineBreak:
+  Enabled: false
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Layout/MultilineAssignmentLayout:
+  EnforcedStyle: same_line
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: same_line
+
+########## Lint #############
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - '/**/spec/**/*'
+
+Lint/ConstantResolution:
+  Enabled: false
+
+########## Style ############
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+Style/InlineComment:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/MissingElse:
+  Enabled: false
+
+Style/StringHashKeys:
+  Exclude:
+  - '*.gemspec'
+
+Style/TopLevelMethodDefinition:
+  Exclude:
+    - 'bin/**/*'
