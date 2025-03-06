@@ -10,6 +10,10 @@ module Fx
       def drop_sequence(*args)
         record(:drop_sequence, args)
       end
+
+      def invert_create_function(args)
+        [:drop_function, args]
+      end
     end
   end
 end
