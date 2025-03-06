@@ -1,0 +1,17 @@
+Description:
+  Create a new database sequence for your application. This will create a new
+  sequence definition file and the accompanying migration.
+
+  When --no-migration is passed, skips generating a migration.
+  When --exact-name is passed, uses exact name without "seq" suffix.
+
+Examples:
+    rails generate fx:sequence numbers
+
+      create: db/sequences/numbers_seq_v01.sql
+      create: db/migrate/[TIMESTAMP]_create_sequence_numbers_seq.rb
+
+    rails generate fx:sequence numbers --exact-name
+
+      create: db/sequences/numbers_v01.sql
+      create: db/migrate/[TIMESTAMP]_create_sequence_numbers.rb
